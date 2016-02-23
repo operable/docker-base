@@ -22,7 +22,7 @@ RUN apt-get install -y build-essential apt-transport-https postgresql-client \
 
 # Install Packagecloud Deps Repo
 COPY packagecloud.sh /root/
-RUN /root/packagecloud.sh && apt-get update -qq
+RUN /root/packagecloud.sh && apt-get update -qq && rm -f /root/packagecloud.sh
 
 # Install Operable Deps
 RUN apt-get install -qq -y erlang=18.2.2 elixir=1.2 libsodium=1.0.8 goon=1.1.1
