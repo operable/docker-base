@@ -18,7 +18,7 @@ RUN apt-get update -qq && \
 # Add some basic dependencies
 RUN apt-get install -y build-essential apt-transport-https postgresql-client \
     sudo openssh-client git unzip wget curl libexpat1 libexpat1-dev \
-    ruby bundler netcat lsof strace net-tools
+    ruby bundler netcat lsof strace net-tools python-pip
 
 # Install Packagecloud Deps Repo
 COPY packagecloud.sh /root/
@@ -39,4 +39,3 @@ USER operable
 # Install local hex and rebar
 RUN /usr/local/bin/mix local.hex --force && \
     /usr/local/bin/mix local.rebar --force
-
