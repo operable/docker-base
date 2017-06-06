@@ -20,6 +20,7 @@ curl_check ()
     echo "Detected curl..."
   else
     echo "Installing curl..."
+    apt-get update &> /dev/null
     apt-get install -q -y curl
   fi
 }
